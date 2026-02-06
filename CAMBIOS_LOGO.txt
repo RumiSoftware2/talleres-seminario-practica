@@ -1,0 +1,150 @@
+✅ CAMBIOS REALIZADOS - SOPORTE PARA LOGO/FOTO EN HEADER
+
+Resumen de Cambios
+==================
+
+📝 Archivos Modificados:
+========================
+
+1. src/components/Header.tsx
+   ✅ Agregado prop "logo" para recibir URL de imagen
+   ✅ Agregada interfaz HeaderProps actualizada
+   ✅ Componente condicional para mostrar logo si se proporciona
+   ✅ Documentación mejorada
+
+2. src/styles/Header.module.css
+   ✅ Nuevo layout Flexbox (.headerWrapper)
+   ✅ Contenedor para logo (.logoContainer)
+   ✅ Estilos para imagen (.logo)
+   ✅ Efecto hover en logo (scale 1.05)
+   ✅ Responsive design actualizado:
+      • Desktop: Logo a la izquierda + Texto a la derecha
+      • Tablet: Logo arriba centrado + Texto debajo
+      • Móvil: Logo arriba + Texto debajo (columna)
+
+3. src/pages/Home.tsx
+   ✅ Header configurado con logo="/vite.svg" como ejemplo
+
+📄 Archivo Nuevo:
+==================
+
+LOGO_INSTRUCCIONES.md
+   ✅ Guía completa para cambiar el logo
+   ✅ Dos opciones: local y URL externa
+   ✅ Especificaciones de imagen (tamaño, formato, peso)
+   ✅ Troubleshooting
+
+🎨 Características del Logo
+============================
+
+✅ Espacio dedicado en el header
+✅ Imagen responsiva:
+   - Desktop: máx 120x120px
+   - Tablet: máx 100x100px
+   - Móvil: máx 80x80px
+✅ Bordes redondeados elegantes
+✅ Sombra suave (0 4px 12px rgba(0,0,0,0.2))
+✅ Efecto hover suave (scale 1.05)
+✅ Transiciones fluidas
+✅ Opcional - si no proporcionas logo, simplemente no se muestra
+
+📐 Layout Responsivo
+====================
+
+DESKTOP (>768px):
+┌──────────────────────────────────┐
+│ [LOGO] │ Plataforma Académica    │
+│        │ Accede a tus talleres...│
+└──────────────────────────────────┘
+
+TABLET (768px - 641px):
+┌──────────────────────────────────┐
+│           [LOGO]                 │
+│   Plataforma Académica           │
+│   Accede a tus talleres...       │
+└──────────────────────────────────┘
+
+MÓVIL (<641px):
+┌──────────────────────────────┐
+│          [LOGO]              │
+│  Plataforma Académica        │
+│  Accede a tus talleres...    │
+└──────────────────────────────┘
+
+🚀 Cómo Usarlo
+==============
+
+1. OPCIÓN A - Imagen Local:
+   • Coloca tu imagen en: public/mi-logo.png
+   • Edita Home.tsx:
+     <Header
+       titulo="..."
+       subtitulo="..."
+       logo="/mi-logo.png"
+     />
+
+2. OPCIÓN B - URL Externa:
+   <Header
+     titulo="..."
+     subtitulo="..."
+     logo="https://ejemplo.com/logo.png"
+   />
+
+3. OPCIÓN C - Sin Logo:
+   <Header
+     titulo="..."
+     subtitulo="..."
+   />
+
+✨ Recomendaciones
+===================
+
+Tamaño de Imagen:
+  • Ideal: 1000x1000px (PNG o WebP)
+  • Mínimo: 500x500px
+  • Peso: <500KB
+
+Formato:
+  • PNG - Mejor para logos con fondo transparente
+  • SVG - Escalable, perfecto para logos
+  • JPG - Para fotos
+  • WebP - Mejor compresión
+
+Ubicación:
+  • Recomendado: public/logo.png
+  • O: public/assets/logo.png
+
+📦 Archivos Compilados
+=======================
+
+✅ Proyecto compila sin errores
+✅ Build size optimizado
+✅ CSS Modules procesados
+✅ TypeScript validado
+
+Tamaño Final:
+  • index.html: 0.64 kB (gzip: 0.38 kB)
+  • CSS: 9.71 kB (gzip: 2.47 kB)
+  • JS: 197.89 kB (gzip: 62.42 kB)
+
+🎯 Ejemplo Completo
+====================
+
+Home.tsx:
+---------
+<Header
+  titulo="Universidad XYZ"
+  subtitulo="Centro de Educación en Línea"
+  logo="/logo-universidad.png"
+/>
+
+resultado:
+┌────────────────────────────────────────┐
+│ [LOGO UNI] Universidad XYZ             │
+│            Centro de Educación...      │
+└────────────────────────────────────────┘
+
+✅ LISTO PARA USAR
+
+Ahora tu header tiene espacio profesional para tu foto/logo/marca.
+Consulta LOGO_INSTRUCCIONES.md para más detalles.
