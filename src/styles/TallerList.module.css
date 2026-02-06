@@ -74,15 +74,20 @@
 
 @media (max-width: 640px) {
   .container {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 0.5rem var(--spacing-xs);
   }
 
   .grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
   }
 
   .section {
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
   }
 }

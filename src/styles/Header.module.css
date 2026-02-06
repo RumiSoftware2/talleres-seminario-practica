@@ -8,11 +8,14 @@
   padding: var(--spacing-3xl) var(--spacing-lg);
   border-bottom: 2px solid var(--color-primary-light);
   box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .headerWrapper {
@@ -83,14 +86,16 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: var(--spacing-2xl) var(--spacing-lg);
+    padding: 0.8rem var(--spacing-md);
   }
 
   .headerWrapper {
-    position: static; /* elimina posicion absolute en pantallas pequeñas */
+    position: static;
     flex-direction: column;
     text-align: center;
-    gap: var(--spacing-xl);
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .content {
@@ -103,53 +108,76 @@
   }
 
   .logo {
-    max-width: 140px;
-    max-height: 140px;
+    max-width: 80px;
+    max-height: 80px;
   }
 
   .titulo {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.2rem;
   }
 
   .subtitulo {
-    font-size: var(--font-size-base);
+    font-size: 0.75rem;
   }
 }
 
 @media (max-width: 640px) {
   .header {
-    padding: var(--spacing-xl) var(--spacing-md);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-dark) 0%,
+      var(--color-primary) 100%
+    );
+    padding: 0.3rem 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .headerWrapper {
-    flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: 0.15rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .content {
+    padding: 0;
+    flex: none;
   }
 
   .logo {
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 50px;
+    max-height: 50px;
   }
 
   .titulo {
-    font-size: var(--font-size-2xl);
+    font-size: 0.75rem;
+    margin-bottom: 0.05rem;
+    line-height: 1;
   }
 
   .subtitulo {
-    font-size: var(--font-size-sm);
+    font-size: 0.5rem;
+    line-height: 1;
+    margin: 0;
   }
-  /* Extra small screens: reduce logo and spacing */
 }
 
 @media (max-width: 360px) {
-  .logo {
-    max-width: 88px;
-    max-height: 88px;
-  }
-  .titulo {
-    font-size: 1.25rem;
-  }
   .header {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: 0.25rem 0.3rem;
+  }
+
+  .logo {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
+  .titulo {
+    font-size: 0.65rem;
+  }
+
+  .subtitulo {
+    font-size: 0.45rem;
   }
 }
+

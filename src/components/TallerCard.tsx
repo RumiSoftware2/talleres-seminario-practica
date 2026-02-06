@@ -17,6 +17,11 @@ const TallerCard: React.FC<TallerCardProps> = ({ taller, onOpen }) => {
     onOpen(taller.ruta);
   };
 
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    handleClick();
+  };
+
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       handleClick();
@@ -56,7 +61,7 @@ const TallerCard: React.FC<TallerCardProps> = ({ taller, onOpen }) => {
       <div className={styles.cardFooter}>
         <button
           className={styles.button}
-          onClick={handleClick}
+          onClick={handleButtonClick}
           aria-label={`Descargar ${taller.nombre}`}
         >
           <span className={styles.buttonIcon}>📄</span>

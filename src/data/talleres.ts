@@ -21,7 +21,7 @@ export const talleres: Taller[] = [
 
     {
     id: 'taller-01',
-    nombre: 'Taller Experiencia Tatiana',
+    nombre: '1. Taller Experiencia Tatiana',
     descripcion: 'Despues de conocer la experiencia de la profesora Tatiana,doy aconocer mis aprendizajes.',
     ruta: '/pdfs/Taller_Tatiana__Sebastian_Mendoza.pdf',
     unidad: 'Talleres 2026-1',

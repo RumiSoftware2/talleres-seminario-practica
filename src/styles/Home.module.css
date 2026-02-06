@@ -1,7 +1,7 @@
 .page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: auto;
   background: var(--bg-primary);
 }
 
@@ -14,7 +14,6 @@
   );
 }
 
-/* Make main content padding adapt to smaller screens */
 .main > * {
   max-width: 1200px;
   margin: 0 auto;
@@ -29,7 +28,7 @@
 
 @media (max-width: 640px) {
   .main > * {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: 0.5rem var(--spacing-xs);
   }
 }
 
