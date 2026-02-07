@@ -36,7 +36,7 @@ export const talleres: Taller[] = [
     ruta: '/pdfs/taller_syllabus_Sebastian_Mendoza.pdf',
     unidad: 'Talleres 2026-1',
     semana: 1,
-    fechaPublicacion: '06-02-2026',
+    fechaPublicacion: '07-02-2026',
   },
   /**
     
