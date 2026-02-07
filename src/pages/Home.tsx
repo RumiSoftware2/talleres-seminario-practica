@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, useEffect } from 'react';
 import Header from '../components/Header';
 import TallerList from '../components/TallerList';
 import { talleres } from '../data/talleres';
@@ -10,6 +10,29 @@ import ContactSection from '../components/ContactSection';
  * Componente principal que orquesta la visualización de talleres
  */
 const Home: React.FC = () => {
+  /**
+   * Obtiene el ID del taller destacado desde los parámetros de URL
+   * Ejemplo: ?taller=taller-01
+   */
+  const tallerDestacadoId = useMemo(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('taller');
+  }, []);
+
+  /**
+   * Hace scroll automático a la tarjeta destacada cuando la página carga
+   */
+  useEffect(() => {
+    if (tallerDestacadoId) {
+      // Espera un pequeño delay para que el DOM esté completamente renderizado
+      setTimeout(() => {
+        const elemento = document.querySelector(`[data-taller-id="${tallerDestacadoId}"]`);
+        if (elemento) {
+          elemento.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 300);
+    }
+  }, [tallerDestacadoId]);
   /**
    * Maneja la apertura de PDFs
    * Valida que el PDF existe antes de abrirlo en una nueva pestaña
@@ -48,6 +71,7 @@ const Home: React.FC = () => {
           talleres={talleres}
           onOpenPdf={handleOpenPdf}
           agruparPorUnidad={true}
+          tallerDestacadoId={tallerDestacadoId}
         />
       </main>
       <ContactSection link="https://portafoliosmendo.netlify.app" label="Mi portafolio" />

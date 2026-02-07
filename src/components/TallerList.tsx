@@ -7,6 +7,7 @@ interface TallerListProps {
   talleres: Taller[];
   onOpenPdf: (ruta: string) => void;
   agruparPorUnidad?: boolean;
+  tallerDestacadoId?: string | null;
 }
 
 /**
@@ -18,6 +19,7 @@ const TallerList: React.FC<TallerListProps> = ({
   talleres,
   onOpenPdf,
   agruparPorUnidad = false,
+  tallerDestacadoId = null,
 }) => {
   const talleresAgrupados = useMemo(() => {
     if (!agruparPorUnidad) {
@@ -58,6 +60,7 @@ const TallerList: React.FC<TallerListProps> = ({
                 key={taller.id}
                 taller={taller}
                 onOpen={onOpenPdf}
+                isDestacado={taller.id === tallerDestacadoId}
               />
             ))}
           </div>

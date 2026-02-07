@@ -5,6 +5,7 @@ import styles from '../styles/TallerCard.module.css';
 interface TallerCardProps {
   taller: Taller;
   onOpen: (ruta: string) => void;
+  isDestacado?: boolean;
 }
 
 /**
@@ -12,7 +13,7 @@ interface TallerCardProps {
  * Tarjeta reutilizable que muestra la información de un taller
  * Permite abrir el PDF en una nueva pestaña
  */
-const TallerCard: React.FC<TallerCardProps> = ({ taller, onOpen }) => {
+const TallerCard: React.FC<TallerCardProps> = ({ taller, onOpen, isDestacado = false }) => {
   const handleClick = () => {
     onOpen(taller.ruta);
   };
@@ -30,11 +31,12 @@ const TallerCard: React.FC<TallerCardProps> = ({ taller, onOpen }) => {
 
   return (
     <div
-      className={styles.card}
+      className={`${styles.card} ${isDestacado ? styles.cardActive : ''}`}
       onClick={handleClick}
       onKeyPress={handleKeyPress}
       role="button"
       tabIndex={0}
+      data-taller-id={taller.id}
     >
       <div className={styles.cardHeader}>
         <h3 className={styles.cardTitle}>{taller.nombre}</h3>
