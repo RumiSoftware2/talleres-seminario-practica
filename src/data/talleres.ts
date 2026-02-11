@@ -42,7 +42,7 @@ export const talleres: Taller[] = [
   
     id: 'taller-03',
     nombre: 'Taller PreImpresos Estudiantes',
-    descripcion: 'reflexion sobre expriencias de futuros educadores de matemáticas en su práctica de imersión total, en donde la matemática se estudia en contextos y problemáticas cercanas a los estudiantes.',
+    descripcion: 'Reflexión sobre expriencias de futuros educadores de matemáticas en su práctica de imersión total, en donde la matemática se estudia en contextos y problemáticas cercanas a los estudiantes.',
     ruta: '/pdfs/taller_preImpresos_Sebastian_Mendoza.pdf',
     unidad: 'Talleres 2026-1',
     semana: 1,
