@@ -38,6 +38,16 @@ export const talleres: Taller[] = [
     semana: 1,
     fechaPublicacion: '07-02-2026',
   },
+  {
+  
+    id: 'taller-03',
+    nombre: 'Taller PreImpresos Estudiantes',
+    descripcion: 'Esenarios para la docencia matemática, con base en los preimpresos de estudiantes.',
+    ruta: '/pdfs/taller_preImpresos_Sebastian_Mendoza.pdf',
+    unidad: 'Talleres 2026-1',
+    semana: 1,
+    fechaPublicacion: '10/02/2026',
+  },
   /**
     
   {
